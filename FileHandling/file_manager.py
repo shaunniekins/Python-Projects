@@ -3,15 +3,17 @@
 
 import os
 
+
 def choose_Option():
     print('(1): Create a file\n(2): Read a file\n(3): Update a file\n(4): Delete a file\n(5): Exit')
     choice = input("Enter a choice (1, 2, 3, 4, or 5): ")
     choice_Function(choice)
 
+
 def choice_Function(choice):
     if choice == '1':
         create_File()
-    elif choice == '2': 
+    elif choice == '2':
         read_File()
     elif choice == '3':
         update_File()
@@ -22,6 +24,7 @@ def choice_Function(choice):
     else:
         print('Invalid choice.')
         choose_Option()
+
 
 def create_File():
     file_Name = input("Enter the file name to be created: ")
@@ -35,6 +38,7 @@ def create_File():
 
     choose_Option()
 
+
 def read_File():
     file_Name = input("Enter the file name to read: ")
     file_Path = file_Name + '.txt'
@@ -43,7 +47,7 @@ def read_File():
             print('\n<----------------------------------->')
             print(file.read())
             print('<----------------------------------->\n')
-        
+
         edit = input("Do you want to edit the file? (1: yes, 2: no): ")
         if edit == '1':
             update_File(file_Name)
@@ -55,6 +59,7 @@ def read_File():
     else:
         print('File does not exist!\n')
         choose_Option()
+
 
 def update_File(file_Name=None):
     if file_Name is None:
@@ -75,6 +80,7 @@ def update_File(file_Name=None):
 
     choose_Option()
 
+
 def delete_File():
     file_Name = input('Enter the file name to be deleted: ')
     file_Path = file_Name + '.txt'
@@ -85,5 +91,6 @@ def delete_File():
         print('File does not exist!\n')
 
     choose_Option()
+
 
 choose_Option()
